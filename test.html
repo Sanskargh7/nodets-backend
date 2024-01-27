@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#clickedImage {
+			position: absolute;
+			/* width: 70px;
+			height: 70px; */
+			background-color: red;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="clickedImage">
+		<!-- Perform a task where clickin on screen moves a image on screen to the clicked position -->
+
+	</div>
+	<script>
+		const imgMove = document.getElementById('clickedImage');
+		document.addEventListener('click', (event) => {
+			const x = event.clientX - imgMove.clientWidth;
+			const y = event.clientY - imgMove.clientWidth;
+			console.log(x);
+			console.log(y);
+
+			imgMove.style.left = `${x}px`;
+			imgMove.style.top = `${y}px`;
+		})
+	</script>
+
+</body>
+
+</html>

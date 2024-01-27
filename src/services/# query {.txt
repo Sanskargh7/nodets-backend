@@ -1,0 +1,32 @@
+# query {
+#   boards {
+#     name
+#     state
+#     id
+#     permissions
+#   }
+# }
+
+query {
+  boards (ids: 5636025427) {
+    groups {
+      title
+      id
+    }
+    columns {
+       id
+       title
+     }
+  }
+}
+
+# mutation {
+#   create_item(
+#     board_id: 5636025427
+#     group_id: "topics"
+#     item_name: "Test Item"
+#     column_values: "{\"date4\":\"2024-05-25\"}"
+#   ) {
+#     id
+#   }
+# }
