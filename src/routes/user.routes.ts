@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Request, Response, Router } from "express";
 import UsersControllers from "../controllers/user.controller";
 import { Routes } from "../interfaces/routes.interface";
 
@@ -13,6 +13,9 @@ class UserRoute implements Routes {
 
 	private initializeRoutes() {
 		//fetch all users
+		this.router.get(`${this.path}/test`, (req: Request, res: Response) => {
+			res.status(200).send({ message: "Wellcome to aws" })
+		})
 		this.router.get(`${this.path}`, this.userController.getUsers);
 		//fetch user
 		this.router.get(`${this.path}/:id`, this.userController.getUser);
